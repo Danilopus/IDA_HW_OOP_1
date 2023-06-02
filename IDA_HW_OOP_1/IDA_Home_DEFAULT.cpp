@@ -85,8 +85,6 @@ int main()
 {
 	//setlocale(LC_CTYPE, "Russian");
 	//system("mode con cols=60 lines=40"); 
-
-	const int menu_elements_number = 2;
 	Main_menu MainMenu;	
 	MainMenu.AddElement("OOP Home Work 01: Intro");	// Homework name
 	MainMenu.AddElement("Fractions");				// Menu element 1
