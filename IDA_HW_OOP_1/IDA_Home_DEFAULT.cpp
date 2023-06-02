@@ -13,8 +13,6 @@
 
 // Homework OOP_01 ----------------------------------------------------	
 
-//std::vector<Fraction*> Available_fractions;
-
 //Task 1 Fraction class demo
 void Task_1()
 {

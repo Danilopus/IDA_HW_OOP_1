@@ -91,6 +91,7 @@ Fraction* Fraction::Divide(Fraction& another_Fraction, std::vector<Fraction*>& A
 	return result_fraction;
 }
 
+
 //::::::::::::::::::::::::::::::PhoneBook::PhoneBook::PhoneBook::PhoneBook::PhoneBook::PhoneBook::PhoneBook::PhoneBook::::::::::::::::::::::::::::::
 void PhoneBook::AddEntry()
 {
@@ -159,6 +160,14 @@ void PhoneBook::User_Choice_Handle()
 	case 4: List(); break;
 	}
 }
+PhoneBook::~PhoneBook()
+{
+	for (int i = 0; i < PhoneBook_logical_unit_list.size(); i++)
+	{
+		delete PhoneBook_logical_unit_list[i];
+	}
+}
+
 
 //::::::::::::::::::::::::::::::PhoneBook_logical_unit::PhoneBook_logical_unit::PhoneBook_logical_unit::PhoneBook_logical_unit::::::::::::::::::::::::::::::
 PhoneBook_logical_unit::PhoneBook_logical_unit()

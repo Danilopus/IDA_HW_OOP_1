@@ -30,6 +30,11 @@ class Fraction
 public:	
 	Fraction(int A1, int A2, std::vector<Fraction*>& Available_fractions);// : _numerator(A1), _denominator(A2){	Available_fractions.push_back(this); Fraction_reduction();	}
 	Fraction(std::vector<Fraction*>& Available_fractions) {	Available_fractions.push_back(this); }
+	~Fraction()
+	{
+		//как получить доступ к внешнему вектору, в котором содержатся указатели на все объекты, 
+		//которые надо удалить, если деструктор не принимает параметров???
+	}
 	void Set_numerator(int numerator){	_numerator = numerator;	}
 	void Set_denominator(int denominator){	_denominator = denominator;	}
 	int Get_numerator()	{	return _numerator;	}
@@ -61,8 +66,12 @@ class PhoneBook
 {
 	//private:		
 	std::vector<PhoneBook_logical_unit*> PhoneBook_logical_unit_list;
+
 public:
-	PhoneBook() {}	
+	PhoneBook() {}
+	// Когда функция Task_2() завершит работу, объявленные объекты в ней (в стэке) будут автоматически уничтожаться
+	// Но все объекты созданные в динамичской памяти останутся, если не удалить их явно. Что и сделаем в деструкторе:
+	~PhoneBook();
 	void AddEntry();
 	void AddEntry(std::string FIO, std::string home_number, std::string work_number, std::string mobile_number, std::string comments);
 	void List();
