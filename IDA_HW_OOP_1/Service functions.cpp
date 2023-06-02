@@ -1,4 +1,4 @@
-#include "Service functions.h"
+ï»¿#include "Service functions.h"
 
 // Service functions -----------------------------------------
 int Get_Int_SA() {
@@ -11,7 +11,7 @@ int Get_Int_SA() {
 
 		if ((a.find_first_not_of("-0123456789") == -1))
 		{
-			for (int i = 1; i < a.size(); i++) // îïðåäåëÿåì åñòü ëè ìèíóñû êðîìå ïåðâîãî ñèìâîëà
+			for (int i = 1; i < a.size(); i++) // Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÐ¼ ÐµÑÑ‚ÑŒ Ð»Ð¸ Ð¼Ð¸Ð½ÑƒÑÑ‹ ÐºÑ€Ð¾Ð¼Ðµ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°
 			{
 				if (a[i] == '-')
 				{
@@ -89,7 +89,7 @@ double Get_Dbl_SA() {
 	if (a == "") { std::cout << "\nInput Error : NULL input\n"; return Get_Dbl_SA(); }
 	if ((a.find_first_not_of("-.0123456789") == -1))
 	{
-		for (int i = 1; i < a.size(); i++) // Ïðîâåðÿåì îòñóòñâèå ëèøíèõ ìèíóñîâ
+		for (int i = 1; i < a.size(); i++) // ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð¾Ñ‚ÑÑƒÑ‚ÑÐ²Ð¸Ðµ Ð»Ð¸ÑˆÐ½Ð¸Ñ… Ð¼Ð¸Ð½ÑƒÑÐ¾Ð²
 		{
 			if (a[i] == '-')
 			{
@@ -99,7 +99,7 @@ double Get_Dbl_SA() {
 
 		}
 		bool Dot_Flag = 0;
-		for (int i = 0; i < a.size(); i++) // ïðîâåðÿåì îòñóòñâèå ëèøíèõ òî÷åê
+		for (int i = 0; i < a.size(); i++) // Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð¾Ñ‚ÑÑƒÑ‚ÑÐ²Ð¸Ðµ Ð»Ð¸ÑˆÐ½Ð¸Ñ… Ñ‚Ð¾Ñ‡ÐµÐº
 		{
 			if (a[i] == '.')
 			{
@@ -137,7 +137,7 @@ double Get_Dbl_Positive() {
 			bool One_Dot_already = false;
 			for (int i = 0; i < a.size(); i++)
 			{
-				if (a[i] == dot[0] && One_Dot_already == true) //ïðîâåðÿåì êîëè÷åñòâî ðàçäåëèòåëåé
+				if (a[i] == dot[0] && One_Dot_already == true) //Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÐµÐ¹
 				{
 					std::cout << "Input Error: Dot misstandig. Positive [DOUBLE] expected.\n";
 					return Get_Dbl_Positive();
@@ -156,7 +156,7 @@ double Get_Dbl_Positive() {
 		}
 		else
 		{
-			//std::cout << "Incorrect symbols: positive REAL expected.\nUse coma instead of dot. Example 50,64\n"; // äà òî÷íî ãîâîðþ âîò äàæå ñîîáùåíèå òàêîå áûëî, à òåïåðü íàîáîðîò wtf*2?!
+			//std::cout << "Incorrect symbols: positive REAL expected.\nUse coma instead of dot. Example 50,64\n"; // Ð´Ð° Ñ‚Ð¾Ñ‡Ð½Ð¾ Ð³Ð¾Ð²Ð¾Ñ€ÑŽ Ð²Ð¾Ñ‚ Ð´Ð°Ð¶Ðµ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ñ‚Ð°ÐºÐ¾Ðµ Ð±Ñ‹Ð»Ð¾, Ð° Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ð½Ð°Ð¾Ð±Ð¾Ñ€Ð¾Ñ‚ wtf*2?!
 			std::cout << "Incorrect symbols: Positive [DOUBLE] expected.\nUse dot instead of coma. Example 50.64\n";
 			return Get_Dbl_Positive();
 		}
